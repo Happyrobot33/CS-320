@@ -59,12 +59,17 @@ void handleInput(int key, int xin, int yin)
 // Main function
 int main(int argc, char **argv)
 {
+    //init glut
     glutInit(&argc, argv);
+    //setup display information
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
     glutInitWindowSize(800, 600);
     glutCreateWindow("Assignment 1");
 
+    //subscribe to key events
     glutSpecialFunc(handleInput);
+
+    //register our callback for rendering
     glutDisplayFunc(display);
 
     glutMainLoop();
